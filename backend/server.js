@@ -7,7 +7,7 @@ const workoutsRoutes = require('./routes/workouts')
 //express app
 const app = express()
 app.use((req, res, next)=>{
-    console.log(req.path, req.method)
+    console.log(req.path, req.method, req.body)
     next()
 })
 

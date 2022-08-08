@@ -1,3 +1,6 @@
+import WorkoutDetails from "../components/WorkoutDetails"
+import WorkoutForm from "../components/WorkoutForm"
+
 import {useEffect, useState} from 'react'
 const Home = () => {
     const [workouts, setWorkouts] = useState(null)
@@ -16,11 +19,12 @@ const Home = () => {
     return ( 
         <div className="mt-10">
             <div className="flex justify-center"> 
-                <ul className="bg-white cursor-pointer rounded-lg border border-gray-200 w-96 text-gray-900">
+                <div className=" cursor-pointer   border-gray-200 w-4/5 text-gray-900">
                     {workouts && workouts.map((workout)=>(
-                    <li key={workout._id} className="hover:bg-sky-200 px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">{workout.title}</li>
-                    ))}
-                </ul>
+                        <WorkoutDetails key={workout._id} workout={workout} />
+                        ))}
+                </div>
+            <WorkoutForm/>
             </div>
         </div>
      );
